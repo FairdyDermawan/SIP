@@ -1,0 +1,1921 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/hotelgrandhyatt_0.js"></script>
+        <script src="data/hoteldoubletreebyhilton_1.js"></script>
+        <script src="data/hotelindonesiakempinski_2.js"></script>
+        <script src="data/hotelmandarinoriental_3.js"></script>
+        <script src="data/hotelpullmanjakarta_4.js"></script>
+        <script src="data/hotelparkhyattfix_5.js"></script>
+        <script src="data/hotelgrandhyatt_6.js"></script>
+        <script src="data/hotelindonesiakempinski_7.js"></script>
+        <script src="data/hoteldoubletreebyhilton_8.js"></script>
+        <script src="data/hotelpullmanjakarta_9.js"></script>
+        <script src="data/hotelparkhyatt_10.js"></script>
+        <script src="data/hotelmandarinoriental_11.js"></script>
+        <script src="data/hoteldoubletreebyhiltonhoteljakarta_12.js"></script>
+        <script src="data/hotelgrandhyattjakarta_13.js"></script>
+        <script src="data/HotelIndonesiaKempinskifixx_14.js"></script>
+        <script src="data/hotelmandarinorientalfixx_15.js"></script>
+        <script src="data/hotelpullmanjakarta_16.js"></script>
+        <script src="data/hotelparkhyattjakarta_17.js"></script>
+        <script src="data/hotelaryaduta_18.js"></script>
+        <script src="data/hotelgrandmercurefixx_19.js"></script>
+        <script src="data/hotelmerlynn_20.js"></script>
+        <script src="data/hotelaryaduta_21.js"></script>
+        <script src="data/hotelgrandmercure_22.js"></script>
+        <script src="data/hotelmerlynn_23.js"></script>
+        <script src="data/hotelaryadutafixxx_24.js"></script>
+        <script src="data/hotelgrandmercure_25.js"></script>
+        <script src="data/hotelmerlynn_26.js"></script>
+        <script src="data/deliniasikecgambirdankecmenteng_28.js"></script>
+        <script src="data/jalan_29.js"></script>
+        <script src="data/serviceareaposjatibaru_30.js"></script>
+        <script src="data/serviceareasukudinas_31.js"></script>
+        <script src="data/serviceareakomplekdinas_32.js"></script>
+        <script src="data/titikpemadamkebakaran_33.js"></script>
+        <script src="data/Hotel_Gambir_34.js"></script>
+        <script src="data/Hotel_Menteng_35.js"></script>
+        <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+
+            if (e.target.feature.geometry.type === 'LineString') {
+              highlightLayer.setStyle({
+                color: '#ffff00',
+              });
+            } else {
+              highlightLayer.setStyle({
+                fillColor: '#ffff00',
+                fillOpacity: 1
+              });
+            }
+            highlightLayer.openPopup();
+        }
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[-6.211724069557343,106.78995531800413],[-6.151596975583414,106.87925413726171]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        function pop_hotelgrandhyatt_0(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelgrandhyatt_0_0() {
+            return {
+                pane: 'pane_hotelgrandhyatt_0',
+                opacity: 1,
+                color: 'rgba(183,72,75,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelgrandhyatt_0');
+        map.getPane('pane_hotelgrandhyatt_0').style.zIndex = 400;
+        map.getPane('pane_hotelgrandhyatt_0').style['mix-blend-mode'] = 'normal';
+        var layer_hotelgrandhyatt_0 = new L.geoJson(json_hotelgrandhyatt_0, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelgrandhyatt_0',
+            layerName: 'layer_hotelgrandhyatt_0',
+            pane: 'pane_hotelgrandhyatt_0',
+            onEachFeature: pop_hotelgrandhyatt_0,
+            style: style_hotelgrandhyatt_0_0,
+        });
+        bounds_group.addLayer(layer_hotelgrandhyatt_0);
+        map.addLayer(layer_hotelgrandhyatt_0);
+        function pop_hoteldoubletreebyhilton_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hoteldoubletreebyhilton_1_0() {
+            return {
+                pane: 'pane_hoteldoubletreebyhilton_1',
+                opacity: 1,
+                color: 'rgba(152,125,183,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hoteldoubletreebyhilton_1');
+        map.getPane('pane_hoteldoubletreebyhilton_1').style.zIndex = 401;
+        map.getPane('pane_hoteldoubletreebyhilton_1').style['mix-blend-mode'] = 'normal';
+        var layer_hoteldoubletreebyhilton_1 = new L.geoJson(json_hoteldoubletreebyhilton_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hoteldoubletreebyhilton_1',
+            layerName: 'layer_hoteldoubletreebyhilton_1',
+            pane: 'pane_hoteldoubletreebyhilton_1',
+            onEachFeature: pop_hoteldoubletreebyhilton_1,
+            style: style_hoteldoubletreebyhilton_1_0,
+        });
+        bounds_group.addLayer(layer_hoteldoubletreebyhilton_1);
+        map.addLayer(layer_hoteldoubletreebyhilton_1);
+        function pop_hotelindonesiakempinski_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelindonesiakempinski_2_0() {
+            return {
+                pane: 'pane_hotelindonesiakempinski_2',
+                opacity: 1,
+                color: 'rgba(232,113,141,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelindonesiakempinski_2');
+        map.getPane('pane_hotelindonesiakempinski_2').style.zIndex = 402;
+        map.getPane('pane_hotelindonesiakempinski_2').style['mix-blend-mode'] = 'normal';
+        var layer_hotelindonesiakempinski_2 = new L.geoJson(json_hotelindonesiakempinski_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelindonesiakempinski_2',
+            layerName: 'layer_hotelindonesiakempinski_2',
+            pane: 'pane_hotelindonesiakempinski_2',
+            onEachFeature: pop_hotelindonesiakempinski_2,
+            style: style_hotelindonesiakempinski_2_0,
+        });
+        bounds_group.addLayer(layer_hotelindonesiakempinski_2);
+        map.addLayer(layer_hotelindonesiakempinski_2);
+        function pop_hotelmandarinoriental_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelmandarinoriental_3_0() {
+            return {
+                pane: 'pane_hotelmandarinoriental_3',
+                opacity: 1,
+                color: 'rgba(243,166,178,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelmandarinoriental_3');
+        map.getPane('pane_hotelmandarinoriental_3').style.zIndex = 403;
+        map.getPane('pane_hotelmandarinoriental_3').style['mix-blend-mode'] = 'normal';
+        var layer_hotelmandarinoriental_3 = new L.geoJson(json_hotelmandarinoriental_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelmandarinoriental_3',
+            layerName: 'layer_hotelmandarinoriental_3',
+            pane: 'pane_hotelmandarinoriental_3',
+            onEachFeature: pop_hotelmandarinoriental_3,
+            style: style_hotelmandarinoriental_3_0,
+        });
+        bounds_group.addLayer(layer_hotelmandarinoriental_3);
+        map.addLayer(layer_hotelmandarinoriental_3);
+        function pop_hotelpullmanjakarta_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelpullmanjakarta_4_0() {
+            return {
+                pane: 'pane_hotelpullmanjakarta_4',
+                opacity: 1,
+                color: 'rgba(133,182,111,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelpullmanjakarta_4');
+        map.getPane('pane_hotelpullmanjakarta_4').style.zIndex = 404;
+        map.getPane('pane_hotelpullmanjakarta_4').style['mix-blend-mode'] = 'normal';
+        var layer_hotelpullmanjakarta_4 = new L.geoJson(json_hotelpullmanjakarta_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelpullmanjakarta_4',
+            layerName: 'layer_hotelpullmanjakarta_4',
+            pane: 'pane_hotelpullmanjakarta_4',
+            onEachFeature: pop_hotelpullmanjakarta_4,
+            style: style_hotelpullmanjakarta_4_0,
+        });
+        bounds_group.addLayer(layer_hotelpullmanjakarta_4);
+        map.addLayer(layer_hotelpullmanjakarta_4);
+        function pop_hotelparkhyattfix_5(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelparkhyattfix_5_0() {
+            return {
+                pane: 'pane_hotelparkhyattfix_5',
+                opacity: 1,
+                color: 'rgba(213,180,60,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelparkhyattfix_5');
+        map.getPane('pane_hotelparkhyattfix_5').style.zIndex = 405;
+        map.getPane('pane_hotelparkhyattfix_5').style['mix-blend-mode'] = 'normal';
+        var layer_hotelparkhyattfix_5 = new L.geoJson(json_hotelparkhyattfix_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelparkhyattfix_5',
+            layerName: 'layer_hotelparkhyattfix_5',
+            pane: 'pane_hotelparkhyattfix_5',
+            onEachFeature: pop_hotelparkhyattfix_5,
+            style: style_hotelparkhyattfix_5_0,
+        });
+        bounds_group.addLayer(layer_hotelparkhyattfix_5);
+        map.addLayer(layer_hotelparkhyattfix_5);
+        function pop_hotelgrandhyatt_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelgrandhyatt_6_0() {
+            return {
+                pane: 'pane_hotelgrandhyatt_6',
+                opacity: 1,
+                color: 'rgba(213,180,60,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelgrandhyatt_6');
+        map.getPane('pane_hotelgrandhyatt_6').style.zIndex = 406;
+        map.getPane('pane_hotelgrandhyatt_6').style['mix-blend-mode'] = 'normal';
+        var layer_hotelgrandhyatt_6 = new L.geoJson(json_hotelgrandhyatt_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelgrandhyatt_6',
+            layerName: 'layer_hotelgrandhyatt_6',
+            pane: 'pane_hotelgrandhyatt_6',
+            onEachFeature: pop_hotelgrandhyatt_6,
+            style: style_hotelgrandhyatt_6_0,
+        });
+        bounds_group.addLayer(layer_hotelgrandhyatt_6);
+        map.addLayer(layer_hotelgrandhyatt_6);
+        function pop_hotelindonesiakempinski_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelindonesiakempinski_7_0() {
+            return {
+                pane: 'pane_hotelindonesiakempinski_7',
+                opacity: 1,
+                color: 'rgba(133,182,111,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelindonesiakempinski_7');
+        map.getPane('pane_hotelindonesiakempinski_7').style.zIndex = 407;
+        map.getPane('pane_hotelindonesiakempinski_7').style['mix-blend-mode'] = 'normal';
+        var layer_hotelindonesiakempinski_7 = new L.geoJson(json_hotelindonesiakempinski_7, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelindonesiakempinski_7',
+            layerName: 'layer_hotelindonesiakempinski_7',
+            pane: 'pane_hotelindonesiakempinski_7',
+            onEachFeature: pop_hotelindonesiakempinski_7,
+            style: style_hotelindonesiakempinski_7_0,
+        });
+        bounds_group.addLayer(layer_hotelindonesiakempinski_7);
+        map.addLayer(layer_hotelindonesiakempinski_7);
+        function pop_hoteldoubletreebyhilton_8(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hoteldoubletreebyhilton_8_0() {
+            return {
+                pane: 'pane_hoteldoubletreebyhilton_8',
+                opacity: 1,
+                color: 'rgba(243,166,178,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hoteldoubletreebyhilton_8');
+        map.getPane('pane_hoteldoubletreebyhilton_8').style.zIndex = 408;
+        map.getPane('pane_hoteldoubletreebyhilton_8').style['mix-blend-mode'] = 'normal';
+        var layer_hoteldoubletreebyhilton_8 = new L.geoJson(json_hoteldoubletreebyhilton_8, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hoteldoubletreebyhilton_8',
+            layerName: 'layer_hoteldoubletreebyhilton_8',
+            pane: 'pane_hoteldoubletreebyhilton_8',
+            onEachFeature: pop_hoteldoubletreebyhilton_8,
+            style: style_hoteldoubletreebyhilton_8_0,
+        });
+        bounds_group.addLayer(layer_hoteldoubletreebyhilton_8);
+        map.addLayer(layer_hoteldoubletreebyhilton_8);
+        function pop_hotelpullmanjakarta_9(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelpullmanjakarta_9_0() {
+            return {
+                pane: 'pane_hotelpullmanjakarta_9',
+                opacity: 1,
+                color: 'rgba(225,89,137,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelpullmanjakarta_9');
+        map.getPane('pane_hotelpullmanjakarta_9').style.zIndex = 409;
+        map.getPane('pane_hotelpullmanjakarta_9').style['mix-blend-mode'] = 'normal';
+        var layer_hotelpullmanjakarta_9 = new L.geoJson(json_hotelpullmanjakarta_9, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelpullmanjakarta_9',
+            layerName: 'layer_hotelpullmanjakarta_9',
+            pane: 'pane_hotelpullmanjakarta_9',
+            onEachFeature: pop_hotelpullmanjakarta_9,
+            style: style_hotelpullmanjakarta_9_0,
+        });
+        bounds_group.addLayer(layer_hotelpullmanjakarta_9);
+        map.addLayer(layer_hotelpullmanjakarta_9);
+        function pop_hotelparkhyatt_10(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelparkhyatt_10_0() {
+            return {
+                pane: 'pane_hotelparkhyatt_10',
+                opacity: 1,
+                color: 'rgba(196,60,57,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelparkhyatt_10');
+        map.getPane('pane_hotelparkhyatt_10').style.zIndex = 410;
+        map.getPane('pane_hotelparkhyatt_10').style['mix-blend-mode'] = 'normal';
+        var layer_hotelparkhyatt_10 = new L.geoJson(json_hotelparkhyatt_10, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelparkhyatt_10',
+            layerName: 'layer_hotelparkhyatt_10',
+            pane: 'pane_hotelparkhyatt_10',
+            onEachFeature: pop_hotelparkhyatt_10,
+            style: style_hotelparkhyatt_10_0,
+        });
+        bounds_group.addLayer(layer_hotelparkhyatt_10);
+        map.addLayer(layer_hotelparkhyatt_10);
+        function pop_hotelmandarinoriental_11(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelmandarinoriental_11_0() {
+            return {
+                pane: 'pane_hotelmandarinoriental_11',
+                opacity: 1,
+                color: 'rgba(145,82,45,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelmandarinoriental_11');
+        map.getPane('pane_hotelmandarinoriental_11').style.zIndex = 411;
+        map.getPane('pane_hotelmandarinoriental_11').style['mix-blend-mode'] = 'normal';
+        var layer_hotelmandarinoriental_11 = new L.geoJson(json_hotelmandarinoriental_11, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelmandarinoriental_11',
+            layerName: 'layer_hotelmandarinoriental_11',
+            pane: 'pane_hotelmandarinoriental_11',
+            onEachFeature: pop_hotelmandarinoriental_11,
+            style: style_hotelmandarinoriental_11_0,
+        });
+        bounds_group.addLayer(layer_hotelmandarinoriental_11);
+        map.addLayer(layer_hotelmandarinoriental_11);
+        function pop_hoteldoubletreebyhiltonhoteljakarta_12(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hoteldoubletreebyhiltonhoteljakarta_12_0() {
+            return {
+                pane: 'pane_hoteldoubletreebyhiltonhoteljakarta_12',
+                opacity: 1,
+                color: 'rgba(125,139,143,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hoteldoubletreebyhiltonhoteljakarta_12');
+        map.getPane('pane_hoteldoubletreebyhiltonhoteljakarta_12').style.zIndex = 412;
+        map.getPane('pane_hoteldoubletreebyhiltonhoteljakarta_12').style['mix-blend-mode'] = 'normal';
+        var layer_hoteldoubletreebyhiltonhoteljakarta_12 = new L.geoJson(json_hoteldoubletreebyhiltonhoteljakarta_12, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hoteldoubletreebyhiltonhoteljakarta_12',
+            layerName: 'layer_hoteldoubletreebyhiltonhoteljakarta_12',
+            pane: 'pane_hoteldoubletreebyhiltonhoteljakarta_12',
+            onEachFeature: pop_hoteldoubletreebyhiltonhoteljakarta_12,
+            style: style_hoteldoubletreebyhiltonhoteljakarta_12_0,
+        });
+        bounds_group.addLayer(layer_hoteldoubletreebyhiltonhoteljakarta_12);
+        map.addLayer(layer_hoteldoubletreebyhiltonhoteljakarta_12);
+        function pop_hotelgrandhyattjakarta_13(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelgrandhyattjakarta_13_0() {
+            return {
+                pane: 'pane_hotelgrandhyattjakarta_13',
+                opacity: 1,
+                color: 'rgba(190,178,151,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelgrandhyattjakarta_13');
+        map.getPane('pane_hotelgrandhyattjakarta_13').style.zIndex = 413;
+        map.getPane('pane_hotelgrandhyattjakarta_13').style['mix-blend-mode'] = 'normal';
+        var layer_hotelgrandhyattjakarta_13 = new L.geoJson(json_hotelgrandhyattjakarta_13, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelgrandhyattjakarta_13',
+            layerName: 'layer_hotelgrandhyattjakarta_13',
+            pane: 'pane_hotelgrandhyattjakarta_13',
+            onEachFeature: pop_hotelgrandhyattjakarta_13,
+            style: style_hotelgrandhyattjakarta_13_0,
+        });
+        bounds_group.addLayer(layer_hotelgrandhyattjakarta_13);
+        map.addLayer(layer_hotelgrandhyattjakarta_13);
+        function pop_HotelIndonesiaKempinskifixx_14(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_HotelIndonesiaKempinskifixx_14_0() {
+            return {
+                pane: 'pane_HotelIndonesiaKempinskifixx_14',
+                opacity: 1,
+                color: 'rgba(229,182,54,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_HotelIndonesiaKempinskifixx_14');
+        map.getPane('pane_HotelIndonesiaKempinskifixx_14').style.zIndex = 414;
+        map.getPane('pane_HotelIndonesiaKempinskifixx_14').style['mix-blend-mode'] = 'normal';
+        var layer_HotelIndonesiaKempinskifixx_14 = new L.geoJson(json_HotelIndonesiaKempinskifixx_14, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_HotelIndonesiaKempinskifixx_14',
+            layerName: 'layer_HotelIndonesiaKempinskifixx_14',
+            pane: 'pane_HotelIndonesiaKempinskifixx_14',
+            onEachFeature: pop_HotelIndonesiaKempinskifixx_14,
+            style: style_HotelIndonesiaKempinskifixx_14_0,
+        });
+        bounds_group.addLayer(layer_HotelIndonesiaKempinskifixx_14);
+        map.addLayer(layer_HotelIndonesiaKempinskifixx_14);
+        function pop_hotelmandarinorientalfixx_15(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelmandarinorientalfixx_15_0() {
+            return {
+                pane: 'pane_hotelmandarinorientalfixx_15',
+                opacity: 1,
+                color: 'rgba(190,207,80,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelmandarinorientalfixx_15');
+        map.getPane('pane_hotelmandarinorientalfixx_15').style.zIndex = 415;
+        map.getPane('pane_hotelmandarinorientalfixx_15').style['mix-blend-mode'] = 'normal';
+        var layer_hotelmandarinorientalfixx_15 = new L.geoJson(json_hotelmandarinorientalfixx_15, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelmandarinorientalfixx_15',
+            layerName: 'layer_hotelmandarinorientalfixx_15',
+            pane: 'pane_hotelmandarinorientalfixx_15',
+            onEachFeature: pop_hotelmandarinorientalfixx_15,
+            style: style_hotelmandarinorientalfixx_15_0,
+        });
+        bounds_group.addLayer(layer_hotelmandarinorientalfixx_15);
+        map.addLayer(layer_hotelmandarinorientalfixx_15);
+        function pop_hotelpullmanjakarta_16(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelpullmanjakarta_16_0() {
+            return {
+                pane: 'pane_hotelpullmanjakarta_16',
+                opacity: 1,
+                color: 'rgba(255,158,23,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelpullmanjakarta_16');
+        map.getPane('pane_hotelpullmanjakarta_16').style.zIndex = 416;
+        map.getPane('pane_hotelpullmanjakarta_16').style['mix-blend-mode'] = 'normal';
+        var layer_hotelpullmanjakarta_16 = new L.geoJson(json_hotelpullmanjakarta_16, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelpullmanjakarta_16',
+            layerName: 'layer_hotelpullmanjakarta_16',
+            pane: 'pane_hotelpullmanjakarta_16',
+            onEachFeature: pop_hotelpullmanjakarta_16,
+            style: style_hotelpullmanjakarta_16_0,
+        });
+        bounds_group.addLayer(layer_hotelpullmanjakarta_16);
+        map.addLayer(layer_hotelpullmanjakarta_16);
+        function pop_hotelparkhyattjakarta_17(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelparkhyattjakarta_17_0() {
+            return {
+                pane: 'pane_hotelparkhyattjakarta_17',
+                opacity: 1,
+                color: 'rgba(231,113,72,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelparkhyattjakarta_17');
+        map.getPane('pane_hotelparkhyattjakarta_17').style.zIndex = 417;
+        map.getPane('pane_hotelparkhyattjakarta_17').style['mix-blend-mode'] = 'normal';
+        var layer_hotelparkhyattjakarta_17 = new L.geoJson(json_hotelparkhyattjakarta_17, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelparkhyattjakarta_17',
+            layerName: 'layer_hotelparkhyattjakarta_17',
+            pane: 'pane_hotelparkhyattjakarta_17',
+            onEachFeature: pop_hotelparkhyattjakarta_17,
+            style: style_hotelparkhyattjakarta_17_0,
+        });
+        bounds_group.addLayer(layer_hotelparkhyattjakarta_17);
+        map.addLayer(layer_hotelparkhyattjakarta_17);
+        function pop_hotelaryaduta_18(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelaryaduta_18_0() {
+            return {
+                pane: 'pane_hotelaryaduta_18',
+                opacity: 1,
+                color: 'rgba(164,113,88,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelaryaduta_18');
+        map.getPane('pane_hotelaryaduta_18').style.zIndex = 418;
+        map.getPane('pane_hotelaryaduta_18').style['mix-blend-mode'] = 'normal';
+        var layer_hotelaryaduta_18 = new L.geoJson(json_hotelaryaduta_18, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelaryaduta_18',
+            layerName: 'layer_hotelaryaduta_18',
+            pane: 'pane_hotelaryaduta_18',
+            onEachFeature: pop_hotelaryaduta_18,
+            style: style_hotelaryaduta_18_0,
+        });
+        bounds_group.addLayer(layer_hotelaryaduta_18);
+        map.addLayer(layer_hotelaryaduta_18);
+        function pop_hotelgrandmercurefixx_19(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelgrandmercurefixx_19_0() {
+            return {
+                pane: 'pane_hotelgrandmercurefixx_19',
+                opacity: 1,
+                color: 'rgba(213,180,60,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelgrandmercurefixx_19');
+        map.getPane('pane_hotelgrandmercurefixx_19').style.zIndex = 419;
+        map.getPane('pane_hotelgrandmercurefixx_19').style['mix-blend-mode'] = 'normal';
+        var layer_hotelgrandmercurefixx_19 = new L.geoJson(json_hotelgrandmercurefixx_19, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelgrandmercurefixx_19',
+            layerName: 'layer_hotelgrandmercurefixx_19',
+            pane: 'pane_hotelgrandmercurefixx_19',
+            onEachFeature: pop_hotelgrandmercurefixx_19,
+            style: style_hotelgrandmercurefixx_19_0,
+        });
+        bounds_group.addLayer(layer_hotelgrandmercurefixx_19);
+        map.addLayer(layer_hotelgrandmercurefixx_19);
+        function pop_hotelmerlynn_20(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelmerlynn_20_0() {
+            return {
+                pane: 'pane_hotelmerlynn_20',
+                opacity: 1,
+                color: 'rgba(114,155,111,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelmerlynn_20');
+        map.getPane('pane_hotelmerlynn_20').style.zIndex = 420;
+        map.getPane('pane_hotelmerlynn_20').style['mix-blend-mode'] = 'normal';
+        var layer_hotelmerlynn_20 = new L.geoJson(json_hotelmerlynn_20, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelmerlynn_20',
+            layerName: 'layer_hotelmerlynn_20',
+            pane: 'pane_hotelmerlynn_20',
+            onEachFeature: pop_hotelmerlynn_20,
+            style: style_hotelmerlynn_20_0,
+        });
+        bounds_group.addLayer(layer_hotelmerlynn_20);
+        map.addLayer(layer_hotelmerlynn_20);
+        function pop_hotelaryaduta_21(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelaryaduta_21_0() {
+            return {
+                pane: 'pane_hotelaryaduta_21',
+                opacity: 1,
+                color: 'rgba(229,182,54,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelaryaduta_21');
+        map.getPane('pane_hotelaryaduta_21').style.zIndex = 421;
+        map.getPane('pane_hotelaryaduta_21').style['mix-blend-mode'] = 'normal';
+        var layer_hotelaryaduta_21 = new L.geoJson(json_hotelaryaduta_21, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelaryaduta_21',
+            layerName: 'layer_hotelaryaduta_21',
+            pane: 'pane_hotelaryaduta_21',
+            onEachFeature: pop_hotelaryaduta_21,
+            style: style_hotelaryaduta_21_0,
+        });
+        bounds_group.addLayer(layer_hotelaryaduta_21);
+        map.addLayer(layer_hotelaryaduta_21);
+        function pop_hotelgrandmercure_22(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelgrandmercure_22_0() {
+            return {
+                pane: 'pane_hotelgrandmercure_22',
+                opacity: 1,
+                color: 'rgba(196,60,57,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelgrandmercure_22');
+        map.getPane('pane_hotelgrandmercure_22').style.zIndex = 422;
+        map.getPane('pane_hotelgrandmercure_22').style['mix-blend-mode'] = 'normal';
+        var layer_hotelgrandmercure_22 = new L.geoJson(json_hotelgrandmercure_22, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelgrandmercure_22',
+            layerName: 'layer_hotelgrandmercure_22',
+            pane: 'pane_hotelgrandmercure_22',
+            onEachFeature: pop_hotelgrandmercure_22,
+            style: style_hotelgrandmercure_22_0,
+        });
+        bounds_group.addLayer(layer_hotelgrandmercure_22);
+        map.addLayer(layer_hotelgrandmercure_22);
+        function pop_hotelmerlynn_23(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelmerlynn_23_0() {
+            return {
+                pane: 'pane_hotelmerlynn_23',
+                opacity: 1,
+                color: 'rgba(78,177,104,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelmerlynn_23');
+        map.getPane('pane_hotelmerlynn_23').style.zIndex = 423;
+        map.getPane('pane_hotelmerlynn_23').style['mix-blend-mode'] = 'normal';
+        var layer_hotelmerlynn_23 = new L.geoJson(json_hotelmerlynn_23, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelmerlynn_23',
+            layerName: 'layer_hotelmerlynn_23',
+            pane: 'pane_hotelmerlynn_23',
+            onEachFeature: pop_hotelmerlynn_23,
+            style: style_hotelmerlynn_23_0,
+        });
+        bounds_group.addLayer(layer_hotelmerlynn_23);
+        map.addLayer(layer_hotelmerlynn_23);
+        function pop_hotelaryadutafixxx_24(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelaryadutafixxx_24_0() {
+            return {
+                pane: 'pane_hotelaryadutafixxx_24',
+                opacity: 1,
+                color: 'rgba(145,82,45,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelaryadutafixxx_24');
+        map.getPane('pane_hotelaryadutafixxx_24').style.zIndex = 424;
+        map.getPane('pane_hotelaryadutafixxx_24').style['mix-blend-mode'] = 'normal';
+        var layer_hotelaryadutafixxx_24 = new L.geoJson(json_hotelaryadutafixxx_24, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelaryadutafixxx_24',
+            layerName: 'layer_hotelaryadutafixxx_24',
+            pane: 'pane_hotelaryadutafixxx_24',
+            onEachFeature: pop_hotelaryadutafixxx_24,
+            style: style_hotelaryadutafixxx_24_0,
+        });
+        bounds_group.addLayer(layer_hotelaryadutafixxx_24);
+        map.addLayer(layer_hotelaryadutafixxx_24);
+        function pop_hotelgrandmercure_25(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelgrandmercure_25_0() {
+            return {
+                pane: 'pane_hotelgrandmercure_25',
+                opacity: 1,
+                color: 'rgba(125,139,143,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelgrandmercure_25');
+        map.getPane('pane_hotelgrandmercure_25').style.zIndex = 425;
+        map.getPane('pane_hotelgrandmercure_25').style['mix-blend-mode'] = 'normal';
+        var layer_hotelgrandmercure_25 = new L.geoJson(json_hotelgrandmercure_25, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelgrandmercure_25',
+            layerName: 'layer_hotelgrandmercure_25',
+            pane: 'pane_hotelgrandmercure_25',
+            onEachFeature: pop_hotelgrandmercure_25,
+            style: style_hotelgrandmercure_25_0,
+        });
+        bounds_group.addLayer(layer_hotelgrandmercure_25);
+        map.addLayer(layer_hotelgrandmercure_25);
+        function pop_hotelmerlynn_26(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+        }
+
+        function style_hotelmerlynn_26_0() {
+            return {
+                pane: 'pane_hotelmerlynn_26',
+                opacity: 1,
+                color: 'rgba(133,182,111,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_hotelmerlynn_26');
+        map.getPane('pane_hotelmerlynn_26').style.zIndex = 426;
+        map.getPane('pane_hotelmerlynn_26').style['mix-blend-mode'] = 'normal';
+        var layer_hotelmerlynn_26 = new L.geoJson(json_hotelmerlynn_26, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_hotelmerlynn_26',
+            layerName: 'layer_hotelmerlynn_26',
+            pane: 'pane_hotelmerlynn_26',
+            onEachFeature: pop_hotelmerlynn_26,
+            style: style_hotelmerlynn_26_0,
+        });
+        bounds_group.addLayer(layer_hotelmerlynn_26);
+        map.addLayer(layer_hotelmerlynn_26);
+        map.createPane('pane_OpenStreetMap_27');
+        map.getPane('pane_OpenStreetMap_27').style.zIndex = 427;
+        var layer_OpenStreetMap_27 = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OpenStreetMap_27',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_OpenStreetMap_27;
+        map.addLayer(layer_OpenStreetMap_27);
+        function pop_deliniasikecgambirdankecmenteng_28(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['@id'] !== null ? autolinker.link(feature.properties['@id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['admin_leve'] !== null ? autolinker.link(feature.properties['admin_leve'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['boundary'] !== null ? autolinker.link(feature.properties['boundary'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['is_in_prov'] !== null ? autolinker.link(feature.properties['is_in_prov'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['is_in_town'] !== null ? autolinker.link(feature.properties['is_in_town'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['type'] !== null ? autolinker.link(feature.properties['type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_deliniasikecgambirdankecmenteng_28_0() {
+            return {
+                pane: 'pane_deliniasikecgambirdankecmenteng_28',
+                opacity: 1,
+                color: 'rgba(247,225,55,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(238,238,9,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_deliniasikecgambirdankecmenteng_28');
+        map.getPane('pane_deliniasikecgambirdankecmenteng_28').style.zIndex = 428;
+        map.getPane('pane_deliniasikecgambirdankecmenteng_28').style['mix-blend-mode'] = 'normal';
+        var layer_deliniasikecgambirdankecmenteng_28 = new L.geoJson(json_deliniasikecgambirdankecmenteng_28, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_deliniasikecgambirdankecmenteng_28',
+            layerName: 'layer_deliniasikecgambirdankecmenteng_28',
+            pane: 'pane_deliniasikecgambirdankecmenteng_28',
+            onEachFeature: pop_deliniasikecgambirdankecmenteng_28,
+            style: style_deliniasikecgambirdankecmenteng_28_0,
+        });
+        bounds_group.addLayer(layer_deliniasikecgambirdankecmenteng_28);
+        map.addLayer(layer_deliniasikecgambirdankecmenteng_28);
+        function pop_jalan_29(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Nama: </b>' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['highway'] !== null ? autolinker.link(feature.properties['highway'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['width'] !== null ? autolinker.link(feature.properties['width'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['lanes'] !== null ? autolinker.link(feature.properties['lanes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['surface'] !== null ? autolinker.link(feature.properties['surface'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['smoothness'] !== null ? autolinker.link(feature.properties['smoothness'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['motorcycle'] !== null ? autolinker.link(feature.properties['motorcycle'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['oneway'] !== null ? autolinker.link(feature.properties['oneway'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['source'] !== null ? autolinker.link(feature.properties['source'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['z_index'] !== null ? autolinker.link(feature.properties['z_index'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['jalan fixx'] !== null ? autolinker.link(feature.properties['jalan fixx'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['jalan fi_1'] !== null ? autolinker.link(feature.properties['jalan fi_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['jalan fi_2'] !== null ? autolinker.link(feature.properties['jalan fi_2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_jalan_29_0() {
+            return {
+                pane: 'pane_jalan_29',
+                opacity: 1,
+                color: 'rgba(213,180,60,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_jalan_29');
+        map.getPane('pane_jalan_29').style.zIndex = 429;
+        map.getPane('pane_jalan_29').style['mix-blend-mode'] = 'normal';
+        var layer_jalan_29 = new L.geoJson(json_jalan_29, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_jalan_29',
+            layerName: 'layer_jalan_29',
+            pane: 'pane_jalan_29',
+            onEachFeature: pop_jalan_29,
+            style: style_jalan_29_0,
+        });
+        bounds_group.addLayer(layer_jalan_29);
+        map.addLayer(layer_jalan_29);
+        function pop_serviceareaposjatibaru_30(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['type'] !== null ? autolinker.link(feature.properties['type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['start'] !== null ? autolinker.link(feature.properties['start'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_serviceareaposjatibaru_30_0() {
+            return {
+                pane: 'pane_serviceareaposjatibaru_30',
+                opacity: 1,
+                color: 'rgba(141,90,153,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_serviceareaposjatibaru_30');
+        map.getPane('pane_serviceareaposjatibaru_30').style.zIndex = 430;
+        map.getPane('pane_serviceareaposjatibaru_30').style['mix-blend-mode'] = 'normal';
+        var layer_serviceareaposjatibaru_30 = new L.geoJson(json_serviceareaposjatibaru_30, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_serviceareaposjatibaru_30',
+            layerName: 'layer_serviceareaposjatibaru_30',
+            pane: 'pane_serviceareaposjatibaru_30',
+            onEachFeature: pop_serviceareaposjatibaru_30,
+            style: style_serviceareaposjatibaru_30_0,
+        });
+        bounds_group.addLayer(layer_serviceareaposjatibaru_30);
+        map.addLayer(layer_serviceareaposjatibaru_30);
+        function pop_serviceareasukudinas_31(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' +'<b>Tipe: </b>'+ (feature.properties['type'] !== null ? autolinker.link(feature.properties['type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['start'] !== null ? autolinker.link(feature.properties['start'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_serviceareasukudinas_31_0() {
+            return {
+                pane: 'pane_serviceareasukudinas_31',
+                opacity: 1,
+                color: 'rgba(114,155,111,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_serviceareasukudinas_31');
+        map.getPane('pane_serviceareasukudinas_31').style.zIndex = 431;
+        map.getPane('pane_serviceareasukudinas_31').style['mix-blend-mode'] = 'normal';
+        var layer_serviceareasukudinas_31 = new L.geoJson(json_serviceareasukudinas_31, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_serviceareasukudinas_31',
+            layerName: 'layer_serviceareasukudinas_31',
+            pane: 'pane_serviceareasukudinas_31',
+            onEachFeature: pop_serviceareasukudinas_31,
+            style: style_serviceareasukudinas_31_0,
+        });
+        bounds_group.addLayer(layer_serviceareasukudinas_31);
+        map.addLayer(layer_serviceareasukudinas_31);
+        function pop_serviceareakomplekdinas_32(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' +'<b>Tipe: </b>'+ (feature.properties['type'] !== null ? autolinker.link(feature.properties['type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['start'] !== null ? autolinker.link(feature.properties['start'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_serviceareakomplekdinas_32_0() {
+            return {
+                pane: 'pane_serviceareakomplekdinas_32',
+                opacity: 1,
+                color: 'rgba(255,158,23,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_serviceareakomplekdinas_32');
+        map.getPane('pane_serviceareakomplekdinas_32').style.zIndex = 432;
+        map.getPane('pane_serviceareakomplekdinas_32').style['mix-blend-mode'] = 'normal';
+        var layer_serviceareakomplekdinas_32 = new L.geoJson(json_serviceareakomplekdinas_32, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_serviceareakomplekdinas_32',
+            layerName: 'layer_serviceareakomplekdinas_32',
+            pane: 'pane_serviceareakomplekdinas_32',
+            onEachFeature: pop_serviceareakomplekdinas_32,
+            style: style_serviceareakomplekdinas_32_0,
+        });
+        bounds_group.addLayer(layer_serviceareakomplekdinas_32);
+        map.addLayer(layer_serviceareakomplekdinas_32);
+        function pop_titikpemadamkebakaran_33(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Nama: </b>' + (feature.properties['DAMKAR'] !== null ? autolinker.link(feature.properties['DAMKAR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' +'<b>Kecamatan: </b>'+ (feature.properties['KECAMATAN'] !== null ? autolinker.link(feature.properties['KECAMATAN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Foto'] !== null ? '<img src="images/' + String(feature.properties['Foto']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_titikpemadamkebakaran_33_0() {
+            return {
+                pane: 'pane_titikpemadamkebakaran_33',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/titikpemadamkebakaran_33.svg',
+            iconSize: [19.76000000000001, 19.76000000000001]
+        }),
+                interactive: true,
+            }
+        }
+        map.createPane('pane_titikpemadamkebakaran_33');
+        map.getPane('pane_titikpemadamkebakaran_33').style.zIndex = 433;
+        map.getPane('pane_titikpemadamkebakaran_33').style['mix-blend-mode'] = 'normal';
+        var layer_titikpemadamkebakaran_33 = new L.geoJson(json_titikpemadamkebakaran_33, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_titikpemadamkebakaran_33',
+            layerName: 'layer_titikpemadamkebakaran_33',
+            pane: 'pane_titikpemadamkebakaran_33',
+            onEachFeature: pop_titikpemadamkebakaran_33,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_titikpemadamkebakaran_33_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_titikpemadamkebakaran_33);
+        map.addLayer(layer_titikpemadamkebakaran_33);
+        function pop_Hotel_Gambir_34(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Nama: </b>' + (feature.properties['Nama:'] !== null ? autolinker.link(feature.properties['Nama:'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Alamat: </b>' + (feature.properties['Alamat:'] !== null ? autolinker.link(feature.properties['Alamat:'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' +'<b>Ketinggian: </b>'+ (feature.properties['Ketinggian'] !== null ? autolinker.link(feature.properties['Ketinggian'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Jumlah Kamar: </b>' + (feature.properties['Jumlah Kam'] !== null ? autolinker.link(feature.properties['Jumlah Kam'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Bintang: </b>' + (feature.properties['Bintang:'] !== null ? autolinker.link(feature.properties['Bintang:'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' +'<b>Aksesibilitas: </b>'+ (feature.properties['Aksesibili'] !== null ? autolinker.link(feature.properties['Aksesibili'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Aksesibilitas: </b>' + (feature.properties['Aksesibili_1'] !== null ? autolinker.link(feature.properties['Aksesibili_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Aksesibilitas: </b>' + (feature.properties['Aksesibili_2'] !== null ? autolinker.link(feature.properties['Aksesibili_2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Foto'] !== null ? '<img src="images/' + String(feature.properties['Foto']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Hotel_Gambir_34_0() {
+            return {
+                pane: 'pane_Hotel_Gambir_34',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(231,113,72,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Hotel_Gambir_34');
+        map.getPane('pane_Hotel_Gambir_34').style.zIndex = 434;
+        map.getPane('pane_Hotel_Gambir_34').style['mix-blend-mode'] = 'normal';
+        var layer_Hotel_Gambir_34 = new L.geoJson(json_Hotel_Gambir_34, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Hotel_Gambir_34',
+            layerName: 'layer_Hotel_Gambir_34',
+            pane: 'pane_Hotel_Gambir_34',
+            onEachFeature: pop_Hotel_Gambir_34,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Hotel_Gambir_34_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Hotel_Gambir_34);
+        map.addLayer(layer_Hotel_Gambir_34);
+        function pop_Hotel_Menteng_35(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Nama: </b>' + (feature.properties['Nama:'] !== null ? autolinker.link(feature.properties['Nama:'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' +'<b>Alamat: </b>'+ (feature.properties['Alamat:'] !== null ? autolinker.link(feature.properties['Alamat:'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Ketinggian: </b>' + (feature.properties['Ketinggian'] !== null ? autolinker.link(feature.properties['Ketinggian'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Jumlah Kamar: </b>' + (feature.properties['Jumlah Kam'] !== null ? autolinker.link(feature.properties['Jumlah Kam'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Bintang: </b>' + (feature.properties['Bintang:'] !== null ? autolinker.link(feature.properties['Bintang:'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' +'<b>Aksesibilitas: </b>'+ (feature.properties['Aksesibili'] !== null ? autolinker.link(feature.properties['Aksesibili'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Aksesibilitas: </b>' + (feature.properties['Aksesibi_1'] !== null ? autolinker.link(feature.properties['Aksesibi_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">'+'<b>Aksesibilitas: </b>'+ (feature.properties['Aksesibi_2'] !== null ? autolinker.link(feature.properties['Aksesibi_2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Foto'] !== null ? '<img src="images/' + String(feature.properties['Foto']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Hotel_Menteng_35_0() {
+            return {
+                pane: 'pane_Hotel_Menteng_35',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,125,183,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Hotel_Menteng_35');
+        map.getPane('pane_Hotel_Menteng_35').style.zIndex = 435;
+        map.getPane('pane_Hotel_Menteng_35').style['mix-blend-mode'] = 'normal';
+        var layer_Hotel_Menteng_35 = new L.geoJson(json_Hotel_Menteng_35, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Hotel_Menteng_35',
+            layerName: 'layer_Hotel_Menteng_35',
+            pane: 'pane_Hotel_Menteng_35',
+            onEachFeature: pop_Hotel_Menteng_35,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Hotel_Menteng_35_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Hotel_Menteng_35);
+        map.addLayer(layer_Hotel_Menteng_35);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/Hotel_Menteng_35.png" /> Hotel_Menteng': layer_Hotel_Menteng_35,'<img src="legend/Hotel_Gambir_34.png" /> Hotel_Gambir': layer_Hotel_Gambir_34,'<img src="legend/titikpemadamkebakaran_33.png" /> titik pemadam kebakaran': layer_titikpemadamkebakaran_33,'<img src="legend/serviceareakomplekdinas_32.png" /> service area komplek dinas': layer_serviceareakomplekdinas_32,'<img src="legend/serviceareasukudinas_31.png" /> service area suku dinas': layer_serviceareasukudinas_31,'<img src="legend/serviceareaposjatibaru_30.png" /> service area pos jatibaru': layer_serviceareaposjatibaru_30,'<img src="legend/jalan_29.png" /> jalan': layer_jalan_29,'<img src="legend/deliniasikecgambirdankecmenteng_28.png" /> deliniasi kec. gambir dan kec. menteng': layer_deliniasikecgambirdankecmenteng_28,"OpenStreetMap": layer_OpenStreetMap_27,'<img src="legend/hotelmerlynn_26.png" /> hotel merlynn': layer_hotelmerlynn_26,'<img src="legend/hotelgrandmercure_25.png" /> hotel grand mercure': layer_hotelgrandmercure_25,'<img src="legend/hotelaryadutafixxx_24.png" /> hotel aryaduta fixxx': layer_hotelaryadutafixxx_24,'<img src="legend/hotelmerlynn_23.png" /> hotel merlynn': layer_hotelmerlynn_23,'<img src="legend/hotelgrandmercure_22.png" /> hotel grand mercure': layer_hotelgrandmercure_22,'<img src="legend/hotelaryaduta_21.png" /> hotel aryaduta': layer_hotelaryaduta_21,'<img src="legend/hotelmerlynn_20.png" /> hotel merlynn': layer_hotelmerlynn_20,'<img src="legend/hotelgrandmercurefixx_19.png" /> hotel grand mercure fixx': layer_hotelgrandmercurefixx_19,'<img src="legend/hotelaryaduta_18.png" /> hotel aryaduta': layer_hotelaryaduta_18,'<img src="legend/hotelparkhyattjakarta_17.png" /> hotel park hyatt jakarta': layer_hotelparkhyattjakarta_17,'<img src="legend/hotelpullmanjakarta_16.png" /> hotel pullman jakarta': layer_hotelpullmanjakarta_16,'<img src="legend/hotelmandarinorientalfixx_15.png" /> hotel mandarin oriental fixx': layer_hotelmandarinorientalfixx_15,'<img src="legend/HotelIndonesiaKempinskifixx_14.png" /> Hotel Indonesia Kempinski fixx': layer_HotelIndonesiaKempinskifixx_14,'<img src="legend/hotelgrandhyattjakarta_13.png" /> hotel grand hyatt jakarta': layer_hotelgrandhyattjakarta_13,'<img src="legend/hoteldoubletreebyhiltonhoteljakarta_12.png" /> hotel doubletree by hilton hotel jakarta': layer_hoteldoubletreebyhiltonhoteljakarta_12,'<img src="legend/hotelmandarinoriental_11.png" /> hotel mandarin oriental': layer_hotelmandarinoriental_11,'<img src="legend/hotelparkhyatt_10.png" /> hotel park hyatt': layer_hotelparkhyatt_10,'<img src="legend/hotelpullmanjakarta_9.png" /> hotel pullman jakarta': layer_hotelpullmanjakarta_9,'<img src="legend/hoteldoubletreebyhilton_8.png" /> hotel doubletree by hilton': layer_hoteldoubletreebyhilton_8,'<img src="legend/hotelindonesiakempinski_7.png" /> hotel indonesia kempinski': layer_hotelindonesiakempinski_7,'<img src="legend/hotelgrandhyatt_6.png" /> hotel grand hyatt': layer_hotelgrandhyatt_6,'<img src="legend/hotelparkhyattfix_5.png" /> hotel park hyatt fix': layer_hotelparkhyattfix_5,'<img src="legend/hotelpullmanjakarta_4.png" /> hotel pullman jakarta': layer_hotelpullmanjakarta_4,'<img src="legend/hotelmandarinoriental_3.png" /> hotel mandarin oriental': layer_hotelmandarinoriental_3,'<img src="legend/hotelindonesiakempinski_2.png" /> hotel indonesia kempinski': layer_hotelindonesiakempinski_2,'<img src="legend/hoteldoubletreebyhilton_1.png" /> hotel doubletree by hilton': layer_hoteldoubletreebyhilton_1,'<img src="legend/hotelgrandhyatt_0.png" /> hotel grand hyatt': layer_hotelgrandhyatt_0,}).addTo(map);
+        setBounds();
+        var i = 0;
+        layer_deliniasikecgambirdankecmenteng_28.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['name'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_deliniasikecgambirdankecmenteng_28'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_deliniasikecgambirdankecmenteng_28]);
+        map.on("zoomend", function(){
+            resetLabels([layer_deliniasikecgambirdankecmenteng_28]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_deliniasikecgambirdankecmenteng_28]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_deliniasikecgambirdankecmenteng_28]);
+        });
+        </script>
+    </body>
+</html>
